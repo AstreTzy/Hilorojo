@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hilo Rojo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      font-family: 'Georgia', serif;
+      color: #4b2e2e;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(216, 167, 177, 0.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #b03060;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .firma {
+      margin-top: 40px;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .heart {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 80px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: beat 1.2s infinite;
+      z-index: 3;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -40px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 40px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+    }
+
+    .petal {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      animation: fall linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="heart"></div>
+
+<!-- Pétalos animados -->
+<script>
+  for (let i = 0; i < 30; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    petal.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(petal);
+  }
+</script>
+
+<div class="container">
+  <h1>Hilo Rojo</h1>
+
+  <p>Pequeño hilo rojo,</p>
+  <p>Te encontré entre las palabras de su carta,  
+  como un secreto escondido,  
+  como un suspiro que viajó por el papel.</p>
+
+  <p>No eres más que un fragmento de tela,  
+  y sin embargo, llevas en ti todo el peso de su amor.  
+  Fuiste tocado por sus manos,  
+  quizá arrancado sin querer de su vestido,  
+  o colocado a propósito,  
+  como un lazo invisible entre su corazón y el mío.</p>
+
+  <p>Te conservo como se guarda un amuleto,  
+  con la delicadeza de quien protege un recuerdo sagrado.  
+  No eres joya, ni flor, ni promesa escrita,  
+  pero vales más que cualquier tesoro,  
+  porque vienes de ella.</p>
+
+  <p>Pasarán los años,  
+  y otros papeles se volverán polvo,  
+  pero tú, hilo rojo,  
+  seguirás aquí,  
+  como testimonio de un amor que viajó  
+  más allá de las palabras.</p>
+
+  <div class="firma">
+    Con amor eterno,<br>
+    [Antonio]
+  </div>
+</div>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
